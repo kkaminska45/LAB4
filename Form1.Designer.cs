@@ -34,6 +34,8 @@
             rbtn90 = new RadioButton();
             rbtn180 = new RadioButton();
             rbtn270 = new RadioButton();
+            btnInvertColors = new Button();
+            btnUpsideDown = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -104,11 +106,35 @@
             rbtn270.Text = "270";
             rbtn270.UseVisualStyleBackColor = true;
             // 
+            // btnInvertColors
+            // 
+            btnInvertColors.BackColor = SystemColors.ActiveCaption;
+            btnInvertColors.Location = new Point(27, 147);
+            btnInvertColors.Name = "btnInvertColors";
+            btnInvertColors.Size = new Size(127, 29);
+            btnInvertColors.TabIndex = 6;
+            btnInvertColors.Text = "Invert Colors";
+            btnInvertColors.UseVisualStyleBackColor = false;
+            btnInvertColors.Click += btnInvertColors_Click;
+            // 
+            // btnUpsideDown
+            // 
+            btnUpsideDown.BackColor = SystemColors.ActiveCaption;
+            btnUpsideDown.Location = new Point(27, 182);
+            btnUpsideDown.Name = "btnUpsideDown";
+            btnUpsideDown.Size = new Size(127, 29);
+            btnUpsideDown.TabIndex = 7;
+            btnUpsideDown.Text = "Upside Down";
+            btnUpsideDown.UseVisualStyleBackColor = false;
+            btnUpsideDown.Click += btnUpsideDown_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(717, 334);
+            Controls.Add(btnUpsideDown);
+            Controls.Add(btnInvertColors);
             Controls.Add(rbtn270);
             Controls.Add(rbtn180);
             Controls.Add(rbtn90);
@@ -131,5 +157,7 @@
         private RadioButton rbtn90;
         private RadioButton rbtn180;
         private RadioButton rbtn270;
+        private Button btnInvertColors;
+        private Button btnUpsideDown;
     }
 }

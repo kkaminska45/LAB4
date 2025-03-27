@@ -50,5 +50,43 @@ namespace LAB4
                 pictureBox1.Image = img;
             }
         }
+
+        private void btnUpsideDown_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                Image img = pictureBox1.Image;
+
+                img.RotateFlip(RotateFlipType.RotateNoneFlipY);
+
+                pictureBox1.Image = img;
+            }
+        }
+        public Bitmap Generate_negative_image(Bitmap sourceimage)
+
+        {
+            Color c;
+
+            for (int i = 0; i < sourceimage.Width; i++)
+            {
+                for (int j = 0; j < sourceimage.Height; j++)
+
+                {
+                    c = sourceimage.GetPixel(i, j);
+
+                    c = Color.FromArgb(255 - c.R, 255 - c.G, 255 - c.B);
+
+                    sourceimage.SetPixel(i, j, c);
+                }
+            }
+            return sourceimage;
+        }
+        private void btnInvertColors_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image = Generate_negative_image((Bitmap)pictureBox1.Image);
+            }
+        }
     }
 }

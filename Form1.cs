@@ -27,5 +27,28 @@ namespace LAB4
                 }
             }
         }
+
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                Image img = pictureBox1.Image;
+
+                if (rbtn90.Checked)
+                {
+                    img.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                }
+                else if (rbtn180.Checked)
+                {
+                    img.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                }
+                else if (rbtn270.Checked)
+                {
+                    img.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                }
+
+                pictureBox1.Image = img;
+            }
+        }
     }
 }

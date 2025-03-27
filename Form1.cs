@@ -27,6 +27,35 @@ namespace LAB4
                 }
             }
         }
+        public static Bitmap ChangeColor(Bitmap scrBitmap)
+        {
+            Color czarny = Color.Black;
+            Color zielony;
+
+            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+
+            for (int i = 0; i < scrBitmap.Width; i++)
+            {
+                for (int j = 0; j < scrBitmap.Height; j++)
+                {
+                    zielony = scrBitmap.GetPixel(i, j);
+
+                    if (zielony.G > zielony.R + 20 && zielony.G > zielony.B + 20)
+                        newBitmap.SetPixel(i, j, zielony);
+                    else
+                        newBitmap.SetPixel(i, j, czarny);
+                }
+            }
+            return newBitmap;
+        }
+
+        private void btnOnlyGreen_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image = ChangeColor((Bitmap)pictureBox1.Image);
+            }
+        }
 
         private void btnRotate_Click(object sender, EventArgs e)
         {

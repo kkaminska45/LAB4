@@ -30,6 +30,7 @@
         {
             btnLoad = new Button();
             pictureBox1 = new PictureBox();
+            btnOnlyGreen = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -53,11 +54,23 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // btnOnlyGreen
+            // 
+            btnOnlyGreen.BackColor = Color.FromArgb(192, 255, 192);
+            btnOnlyGreen.Location = new Point(24, 223);
+            btnOnlyGreen.Name = "btnOnlyGreen";
+            btnOnlyGreen.Size = new Size(131, 29);
+            btnOnlyGreen.TabIndex = 2;
+            btnOnlyGreen.Text = "OnlyGreen";
+            btnOnlyGreen.UseVisualStyleBackColor = false;
+            btnOnlyGreen.Click += btnOnlyGreen_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(696, 326);
+            Controls.Add(btnOnlyGreen);
             Controls.Add(pictureBox1);
             Controls.Add(btnLoad);
             Name = "Form1";
@@ -71,5 +84,6 @@
 
         private Button btnLoad;
         private PictureBox pictureBox1;
+        private Button btnOnlyGreen;
     }
 }
